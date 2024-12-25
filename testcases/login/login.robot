@@ -11,7 +11,6 @@ ${USERNAME_CORRECT}    tomsmith
 ${PASSWORD_CORRECT}    SuperSecretPassword!
 ${PASSWORD_INCORRECT}    Password
 ${USERNAME_INCORRECT}    tomholland
-${EXPECTED_TEXT_LOGIN_SUCCESS}    You logged into a secure area!
 ${EXPECTED_TEXT_PASSWORD_INCORRECT}    Your password is invalid!
 ${EXPECTED_TEXT_USERNAME_NOT_FOUND}    Your username is invalid!
 
@@ -20,7 +19,7 @@ Login success
     [Documentation]    To verify that a user can login successfully when they put a correct username and password.
     Input Username and Password ${USERNAME_CORRECT} and ${PASSWORD_CORRECT}
     Click Button    class:radius
-    Element Should Contain    id:flash    ${EXPECTED_TEXT_LOGIN_SUCCESS}     
+    Element Should Contain    id:flash    You logged into a secure area!     
     Element Should Contain    xpath://*[@id="content"]/div/h2    Secure Area
     Element Should Contain    xpath://*[@id="content"]/div/h4    Welcome to the Secure Area. When you are done click logout below.
     Click Element    xpath://i[contains(text(), 'Logout')]
