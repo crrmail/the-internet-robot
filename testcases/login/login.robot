@@ -1,5 +1,6 @@
 *** Settings ***
 Library    SeleniumLibrary
+Resource    ../../keywords/login.robot
 Test Setup    Open Browser    ${URL}    ${BROWSER}
 Test Teardown    Close Browser
 
@@ -16,8 +17,7 @@ ${EXPECTED_TEXT_USERNAME_NOT_FOUND}    Your username is invalid!
 
 *** Test Cases ***
 Login success
-    Input Text  id:username    ${USERNAME_CORRECT}
-    Input Text    id:password    ${PASSWORD_CORRECT}
+    Input Username and Password ${USERNAME_CORRECT} and ${PASSWORD_CORRECT}
     Click Button    class:radius
     Element Should Contain    id:flash    ${EXPECTED_TEXT_LOGIN_SUCCESS}     
     Element Should Contain    xpath://*[@id="content"]/div/h2    Secure Area
@@ -26,14 +26,12 @@ Login success
     Element Should Contain    xpath://*[@id="flash"]     You logged out of the secure area!
 
 Login failed - Password incorrect
-    Input Text    id:username    ${USERNAME_CORRECT}
-    Input Text    id:password    ${PASSWORD_INCORRECT}
+    Input Username and Password ${USERNAME_CORRECT} and ${PASSWORD_INCORRECT}
     Click Button    class:radius
     Element Should Contain    id:flash     ${EXPECTED_TEXT_PASSWORD_INCORRECT}
 
 Login failed - Username not found
-    Input Text    id:username    ${USERNAME_INCORRECT}
-    Input Text    id:password    Password!
+    Input Username and Password ${USERNAME_INCORRECT} and Password!
     Click Button    class:radius
     Element Should Contain    id:flash     ${EXPECTED_TEXT_USERNAME_NOT_FOUND}
   
