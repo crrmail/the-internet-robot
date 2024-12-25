@@ -233,20 +233,6 @@ files = [
 ]
 
 [[package]]
-name = "robotframework-selenium2library"
-version = "3.0.0"
-description = "Web testing library for Robot Framework"
-optional = false
-python-versions = "*"
-files = [
-    {file = "robotframework-selenium2library-3.0.0.tar.gz", hash = "sha256:2a8e942b0788b16ded253039008b34d2b46199283461b294f0f41a579c70fda7"},
-    {file = "robotframework_selenium2library-3.0.0-py2.py3-none-any.whl", hash = "sha256:1826b1ce8ccac76f14c4812e2d6df79f52ecda8a3c59c427eea45548c2e22cb1"},
-]
-
-[package.dependencies]
-robotframework-seleniumlibrary = ">=3.0.0"
-
-[[package]]
 name = "robotframework-seleniumlibrary"
 version = "6.6.1"
 description = "Web testing library for Robot Framework"
@@ -306,13 +292,13 @@ files = [
 
 [[package]]
 name = "trio"
-version = "0.27.0"
+version = "0.28.0"
 description = "A friendly Python library for async concurrency and I/O"
 optional = false
-python-versions = ">=3.8"
+python-versions = ">=3.9"
 files = [
-    {file = "trio-0.27.0-py3-none-any.whl", hash = "sha256:68eabbcf8f457d925df62da780eff15ff5dc68fd6b367e2dde59f7aaf2a0b884"},
-    {file = "trio-0.27.0.tar.gz", hash = "sha256:1dcc95ab1726b2da054afea8fd761af74bad79bd52381b84eae408e983c76831"},
+    {file = "trio-0.28.0-py3-none-any.whl", hash = "sha256:56d58977acc1635735a96581ec70513cc781b8b6decd299c487d3be2a721cd94"},
+    {file = "trio-0.28.0.tar.gz", hash = "sha256:4e547896fe9e8a5658e54e4c7c5fa1db748cbbbaa7c965e7d40505b928c73c05"},
 ]
 
 [package.dependencies]
@@ -404,4 +390,4 @@ h11 = ">=0.9.0,<1"
 [metadata]
 lock-version = "2.0"
 python-versions = "3.10.4"
-content-hash = "3e34d764cd0949c6d220e50d3687384345c17a3d21989490f1a705edde6d0058"
+content-hash = "c51ac958d8eff2dd773a0f03eeeaa1f9510478b13890d94dfc23de4ea129113a"
