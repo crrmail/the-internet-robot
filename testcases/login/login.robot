@@ -17,6 +17,7 @@ ${EXPECTED_TEXT_USERNAME_NOT_FOUND}    Your username is invalid!
 
 *** Test Cases ***
 Login success
+    [Documentation]    To verify that a user can login successfully when they put a correct username and password.
     Input Username and Password ${USERNAME_CORRECT} and ${PASSWORD_CORRECT}
     Click Button    class:radius
     Element Should Contain    id:flash    ${EXPECTED_TEXT_LOGIN_SUCCESS}     
@@ -26,12 +27,13 @@ Login success
     Element Should Contain    xpath://*[@id="flash"]     You logged out of the secure area!
 
 Login failed - Password incorrect
+    [Documentation]    To verify that a user can login unsuccessfully when they put a correct username but wrong password.
     Input Username and Password ${USERNAME_CORRECT} and ${PASSWORD_INCORRECT}
     Click Button    class:radius
     Element Should Contain    id:flash     ${EXPECTED_TEXT_PASSWORD_INCORRECT}
 
 Login failed - Username not found
+    [Documentation]    To verify that a user can login unsuccessfully when they put a username that did not exist.
     Input Username and Password ${USERNAME_INCORRECT} and Password!
     Click Button    class:radius
     Element Should Contain    id:flash     ${EXPECTED_TEXT_USERNAME_NOT_FOUND}
-  
